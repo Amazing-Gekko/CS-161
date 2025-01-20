@@ -1,1 +1,55 @@
+#1. Printing out the value of a variable in binary and decimal form
+x = 31
+print(x, bin(x), hex(x))
+
+#2. Identifying the error when giving an incorrect input type
+x = 1.825
+# Error: TypeError occurs because bin() and hex() require an integer input, not a float.
+# We need to convert the float to an integer before using these functions.
+# Converting float to an integer by truncating the decimal part
+x_int = int(x)
+
+# Now use bin() and hex() on the integer value
+print(x_int, bin(x_int), hex(x_int))
+
+#3. Assigning a binary or hex value to a variable
+y = 0b1011  # Binary representation of 11
+z = 0xA3   # Hexadecimal representation of 163
+print(y, z)
+
+#4. Printing sum
+x = 18
+y = 21
+z = 52
+w = x + y + z
+print('The sum is', w)
+
+#1 & 2 & 4 Compression time (I think you meant to put 3. but you put 4.)
+original_size = 240
+dictionary_size = 25
+compressed_text_size = 148
+
+# Calculate the percent of compression
+compression_percent = 1 - ((compressed_text_size + dictionary_size) / original_size)
+
+# Print results
+print('  Dictionary size:', str(dictionary_size), 'characters')
+print('  Compressed text size:', str(compressed_text_size), 'characters')
+print('  Total:', str(compressed_text_size + dictionary_size), 'characters')
+print('  Original text size:', str(original_size), 'characters')
+print('  Compression:', format(compression_percent * 100, '.2f'), '%')
+
+#6. Extra credit attempt
+def twos_complement(num):
+    # For positive numbers and zero
+    if num >= 0:
+        return format(num, '08b')
+
+    # For negative numbers
+    return format((1 << 8) + num, '08b')
+
+
+# User input
+num = int(input("Enter a decimal number (-128 to 127): "))
+print(f"Two's complement of {num}: {twos_complement(num)}")
 
