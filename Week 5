@@ -1,0 +1,171 @@
+# Check if a number is divisible by 5.
+# Asking the user to enter a number.
+number = int(input("Enter a number: "))
+
+# Checking if the number is divisible by 5.
+if number % 5 == 0:
+    print(f"{number} is divisible by 5.")
+else:
+    print(f"{number} is not divisible by 5.")
+
+
+# State capital using if and elif
+# Asking the user for the name of a state.
+state = input("Enter the name of a state: ")
+
+# Checking if the state is valid otherwise the program refuses the answer.
+if state == 'California':
+    print("Sacramento")
+elif state == 'Texas':
+    print("Austin")
+elif state == 'New York':
+    print("Albany")
+elif state == 'Florida':
+    print("Tallahassee")
+elif state == 'Illinois':
+    print("Springfield")
+else:
+    print("State not recognized.")
+
+
+# State capitals using a dictionary with get()
+# Dictionary of states and capitals
+state_capitals = {
+    "California": "Sacramento",
+    "Texas": "Austin",
+    "New York": "Albany",
+    "Florida": "Tallahassee",
+    "Illinois": "Springfield"
+}
+
+# Ask user for state and use dictionary to get the capital
+state = input("Enter a state: ")
+capital = state_capitals.get(state, "State not recognized.")
+
+print(f"The capital of {state} is {capital}.")
+
+
+# State capitals using match case
+# Asking the user for the name of a state.
+state = input("Enter a state: ")
+
+# Checking if the state is valid otherwise the program refuses the answer.
+match state:
+    case 'California':
+        print("Sacramento")
+    case 'Texas':
+        print("Austin")
+    case 'New York':
+        print("Albany")
+    case 'Florida':
+        print("Tallahassee")
+    case 'Illinois':
+        print("Springfield")
+    case _:
+        print("State not recognized.")
+
+
+# If/Else approach for state capitals
+# Asking the user for the name of a state.
+state = input("Enter a state name: ")
+
+# Checking if the state is valid otherwise the program refuses the answer.
+if state == 'Wisconsin':
+    print('Madison')
+elif state == 'Colorado':
+    print('Denver')
+elif state == 'California':
+    print('Sacramento')
+elif state == 'Texas':
+    print('Austin')
+elif state == 'New York':
+    print('Albany')
+elif state == 'Florida':
+    print('Tallahassee')
+else:
+    print('I do not know that one')
+
+
+# Dictionary approach for state capitals
+# Dictionary of states and capitals.
+state = {
+    "Oregon": "Salem",
+    "Washington": "Olympia",
+    "Idaho": "Boise",
+    "California": "Sacramento",
+    "Texas": "Austin",
+    "New York": "Albany"
+}
+
+capital = state.get("Oregon", "Not found")
+print(capital)
+
+
+# Match Case approach for state capitals.
+# Asking user to input a state.
+state = input("Enter a state: ")
+
+# Match, Case. For states and their capitals.
+match state:
+    case 'Oregon':
+        print("Salem")
+    case 'Washington':
+        print("Olympia")
+    case 'Idaho':
+        print("Boise")
+    case 'California':
+        print("Sacramento")
+    case 'Texas':
+        print("Austin")
+    case 'New York':
+        print("Albany")
+    case _:
+        print("State not recognized.")
+
+
+# Pool admission function using elif
+# Using pool_admission
+def pool_admission(age):
+    """
+    This function returns the price of admission to a pool based on age.
+    - Under 2 years: free
+    - Age 2–11: $3
+    - Age 11–60: $6
+    - Over 60: $4
+    """
+    if age < 2:
+        return 0
+    elif age < 12:
+        return 3
+    elif age < 61:
+        return 6
+    else:
+        return 4
+
+# Example usage:
+age = int(input("Enter age: "))
+admission_price = pool_admission(age)
+print(f"The admission price is ${admission_price}.")
+
+
+# Count occurrences of "160" in HTML with requests module.
+import requests
+
+# Make a request to the website
+response = requests.get("http://coccbobcat.com")
+
+# Count occurrences of "160"
+substring_count = response.text.count("160")
+
+# Print the result
+print(f'The substring "160" appears {substring_count} times in the HTML source of http://coccbobcat.com.')
+
+
+# Count the number of processes running using psutil
+import psutil
+
+# Get the number of processes
+process_count = len(psutil.pids())
+
+# Print the result
+print(f"Number of running processes: {process_count}")
